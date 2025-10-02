@@ -17,4 +17,4 @@ I chose to use the IMA linear actuator from the catalog. This was for two reason
 
 I defined my problem goal to be the heaviest mass that could be lifted to a height of 0.15 m. My general solution, simply based on the principle of torque, is shown below. 
 
-<img src="weight-lifting-diagram.jpeg">
+<img src="/assets/images/weight-lifting-diagram.jpeg">
