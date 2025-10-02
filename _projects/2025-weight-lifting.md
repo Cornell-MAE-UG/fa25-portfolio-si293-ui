@@ -1,13 +1,20 @@
 ---
 layout: project
-title: Spaceship Design
+title: Weight Lifting Mechanism Overview
 description: Just a spaceship that I designed
-technologies: [SolidWorks, Machining]
-image: /assets/images/spaceship-design.jpg
+technologies: [Hand calculations]
+image: /assets/images/weight-lifting.png
 ---
 
 
-In 2021, NASA asked me to design a spaceship...Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec accumsan leo. Pellentesque ornare orci enim, vitae vestibulum nibh rutrum in. Donec pharetra risus nec ipsum fringilla, et mattis tortor auctor. Duis tortor ante, posuere ut odio a, scelerisque interdum purus. Aenean faucibus luctus est, sed bibendum tellus. Nulla et magna urna. Morbi a ipsum sollicitudin, rhoncus risus volutpat, ultricies nunc. Quisque mollis finibus ante id imperdiet. Quisque vehicula elit sit amet felis facilisis fermentum.
+In ENGRD 2020, we were asked to come up with a design for the following prompt:
 
-Aenean tincidunt aliquam arcu, in euismod dui dapibus eu. In placerat, mi et ultrices consequat, quam ligula cursus mauris, in semper neque nibh at est. Maecenas hendrerit dignissim porta. Phasellus nec fringilla dolor. Etiam efficitur nisi sit amet velit pharetra feugiat. Etiam ultrices turpis at leo semper, eleifend scelerisque neque malesuada. Aliquam molestie congue rhoncus. Donec blandit neque dolor, nec tristique mi pretium ac. Mauris tincidunt ullamcorper magna, nec pellentesque mi sagittis quis.
+"Given a 2D design space of 150cm long and 50cm tall, a rigid bar of a fixed length (your choice), 3 pin supports of which two need to be mounted on the ground and a linear actuator (pick from <a href="https://www.tolomatic.com/wp-content/uploads/2022/05/2700-4000_29_IMA_cat.pdf">this</a> online catalog, use max force values only), design a frame/mechanism to lift the maximum possible weight to the highest possible height. Assume all the supports and bar/actuator are rigid."
 
+<b>Solution:</b>
+
+I chose to use the IMA linear actuator from the catalog. This was for two reasons. First is the fact that all of the linear actuators have a stroke length of at least 0.5m, which well exceeds the dimensions of available space. Therefore, I wanted to use the least overbuilt mechanism possible for my task. Also, the IMA was the only actuator with full performance and mechanical specifications available, so using it was good practice for fully understanding my mechanism. 
+
+I defined my problem goal to be the heaviest mass that could be lifted to a height of 0.15 m. My general solution, simply based on the principle of torque, is shown below. 
+
+<img src="weight-lifting-diagram.jpeg">
