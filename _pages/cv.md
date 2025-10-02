@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sava Iliev - Curriculum Vitae
+title: <Your Name> - Curriculum Vitae
 permalink: /cv/
 ---
 ## Curriculum Vitae

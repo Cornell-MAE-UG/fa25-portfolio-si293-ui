@@ -8,12 +8,12 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : Sava Iliev
+title                    : Your Name
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : Sava Iliev
 description              : Sava Iliev - Projects and CV 
-baseurl                  : /Portfolio-Sava-Iliev/
+baseurl                  : "" # Set this to your repo name 
 
 # Theme and Style
 theme: jekyll-theme-minimal

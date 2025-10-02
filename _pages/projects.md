@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sava Iliev - Portfolio
+title: <Your Name> - Portfolio
 permalink: /projects/
 ---
 
