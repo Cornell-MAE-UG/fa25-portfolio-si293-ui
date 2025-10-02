@@ -13,7 +13,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : Sava Iliev
 description              : Sava Iliev - Projects and CV 
-baseurl                  : "" # Set this to your repo name 
+baseurl                  : /fa25-portfolio-si293-ui/
 
 # Theme and Style
 theme: jekyll-theme-minimal
