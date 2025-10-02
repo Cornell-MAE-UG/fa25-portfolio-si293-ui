@@ -13,7 +13,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : Sava Iliev
 description              : Sava Iliev - Projects and CV 
-baseurl                  : /fa25-portfolio-si293-ui/
+baseurl                  : /Portfolio-Sava-Iliev/
 
 # Theme and Style
 theme: jekyll-theme-minimal
