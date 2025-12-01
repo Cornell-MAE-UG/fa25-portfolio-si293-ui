@@ -6,7 +6,7 @@ technologies: [Hand calculations]
 image: /assets/images/weight-lifting.png
 ---
 
-TEST UPDATE
+TEST UPDATE 2
 
 In ENGRD 2020, we were asked to come up with a design for the following prompt:
 

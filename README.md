@@ -141,6 +141,10 @@ Then, to run the server you run the `jekyll serve` command:
 ```bash
 bundle exec jekyll serve
 ```
+OR RUN THIS:
+```bash
+bundle exec jekyll serve --baseurl ""
+```
 
 Note that many updates to your code are automatically reloaded into the web server. However, some changes, notably to `_config.yml` require a restart of the jekyll server.
 
