@@ -2,12 +2,9 @@
 layout: project
 title: Weight Lifting Mechanism Overview
 description: Just a spaceship that I designed
-technologies: [Hand calculations]
+technologies: [Hand calculations, Desmos]
 image: /assets/images/weight-lifting.png
 ---
-
-TEST UPDATE 2
-
 In ENGRD 2020, we were asked to come up with a design for the following prompt:
 
 "Given a 2D design space of 150cm long and 50cm tall, a rigid bar of a fixed length (your choice), 3 pin supports of which two need to be mounted on the ground and a linear actuator (pick from <a href="https://www.tolomatic.com/wp-content/uploads/2022/05/2700-4000_29_IMA_cat.pdf">this</a> online catalog, use max force values only), design a frame/mechanism to lift the maximum possible weight to the highest possible height. Assume all the supports and bar/actuator are rigid."
@@ -31,3 +28,68 @@ Plotting T (kN\*m) as a function of &theta; (y-axis) and d (x-axis) yields the f
 Unsurprisingly, the optimal setup is when &theta; = 90 and d = 0.15. This yields a torque of 1.8 kN\*m. Consequently, the heaviest weight that can be lifted to 0.15 meters is mg = 36 kN and therefore:
 
 <b>m = 3670 kg</b>
+
+<b>Revisiting my original static analysis for a new assignment a few weeks later:</b>
+
+The original static analysis I performed was based on the assumption that the bar was entirely rigid and therefore of arbitrary shape with 0 deflection. My optimization was done via a simple moment balance around the mounting pin of the beam to prove that the design capable of lifting the most mass placed an actuator all the way in the bottom right corner mounted perfectly vertically. Now I am to do the following, assuming my beam is capable of bending:<br>
+"<br>
+a) Find the maximum deflection in your beam. State your assumptions clearly and
+describe your analysis.<br>
+b) Choose a beam design (cross-section, material) such that its vertical deflection is
+below 2% of its length and is the most mass-efficient possible.<br>
+c) Present your final beam design in an image or drawing.<br>
+"<br>
+Note that this problem statement is rather nonsensical, since there was no beam cross section or material initially, so "maximum deflection" needs to be based on some arbitrary assumption of those parameters. 
+
+More pertinently, in my specific design, the beam actually sees no transverse loading, as it is effectively a two force member that sees no load (since the mass just sits on top of the vertically mounted actuator). As a result, the beam sees no deformation. However, for the sake of this problem I will make a slight change to my design just so that I need to calculate some sort of deflection. 
+
+Given that the actuator has a nonzero thickness, if it is mounted directly in the bottom right corner of the allowable space, half of it will technically fall outside the box. According to the Tolomatic datasheet, the most powerful IMA (IMA55, the one being used for my 36 kN peak force estimate) has a thickness of 5.66 inches. This means that in order for it to be fully contained in the allowable space, it needs to be shifted over by 0.072 meters. This places is at a distance of x = 0.078 m, a rather significant change, meaning we need to adjust our maximum weight accordingly.
+
+3670*0.078/0.15 = 1908 kg
+
+Now that the actuator and mass are displaced from each other, we get bending according to the following general setup:
+
+<img src="../../assets/images/bending1.jpeg" width=300px>
+
+which for the purposes of beam bending can be modeled as
+
+<img src="../../assets/images/bending2.jpg" width=300px>
+
+This is an overhanging beam with an end point load. Such a loading can be found in standard beam bending tables. Because the overhang is long, the maximum deflection occurs at the end:
+
+δ_max = 2Fa^2/6EI (L+a)
+
+where L is the distance between the two supports, a is the length of the overhang, F is the point load at the overhang tip (tranverse mass load), E is the Young's Modulus, and I is the moment of inertia of the beam. 
+
+L = sqrt(0.15^2+0.05^2) 0.078/0.15 = 0.082
+
+a = sqrt(0.15^2+0.05^2) 0.072/0.15 = 0.076
+
+F = 36000 * sin(arctan(0.15/0.05)) = 34152
+
+Now we need to decide on a default beam material and cross section. If we assume our beam is a steel beam with a 2 cm diameter, then E = 200 GPa and I = 7.85*10^-9 m^4. 
+
+We then calculate δ_max:
+
+<img src="../../assets/images/bendingcalcs1.jpg" width=300px>
+
+We see that <b>δ_max = 0.0066m</b>, which is <b>4.17%</b> of the total beam length. 
+
+We now want to choose a beam design (cross-section, material) such that its vertical deflection is
+below 2% of its length and is the most mass-efficient possible. A good material choice would be titanium, which has a Young's Modulus on the same order of magnitude as steel (125 GPa) but is notably lighter. Rearranging our deflection equation:
+
+I = 2Fa^2/6Eδ_max (L+a)
+
+δ_max = sqrt(0.15^2+0.05^2) 2/100
+
+Hence, I = 2.62 * 10^-8
+
+The ideal beam to minimize bending is an infinitely thin infinitely tall beam. Of course, we need to be reasonable and make sure our beam is actually manufacturable (another shortcoming of this problem). Hence, let's assume that the height can be no more than 10x the width.
+
+I_beam = 1/12 bh^3 = 1/(12*10) h^4
+
+h = (12*10I)^1/4 = 4.2 cm
+
+Hence, my optimal beam design to achieve 2% bending over length is <b>titanium with a rectangular cross section (width 0.42 cm and height 4.2 cm)</b>. An imagine of the design is shown below:
+
+<img src="../../assets/images/finalbeam.jpg" width=300px>
