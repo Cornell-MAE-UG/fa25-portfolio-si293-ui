@@ -8,7 +8,11 @@ image: /assets/images/slf.jpg
 
 <div style="clear: left;"></div>
 
-[Client Pitch](#client-pitch) | [Functional Prototype](#functional-prototype)
+[Client Pitch](#client-pitch) | [Functional Prototype](#functional-prototype) | [Client Report](#client-report)
+<br>
+<br>
+The Open Design Project was the biggest project we completed for MAE 2250: Intro to Mechanical Design. It was centered around the premise of designing (but mostly just pitching) a mechanical solution to spotted lanternfly infestation of vineyards. Spotted lanternflies are a huge problem for vineyards in NYS and currently the only solution to their infestation is to monitor them extremely vigilantly and use a variety of pesticides and netting whenever possible as prevention. You might think that the purpose of an Intro to Mechanical Design class would be to learn and practice mechanical design, but this project really just turned into a bunch of rather pointless design without any possibility whatsoever of empirical testing. But at least we got a lot of practice pitching useless ideas to uninterested audiences (just like the real world)! Anyways, below are some of the deliverables my group created for the project.
+
 ## Client Pitch
 
 <img src="../../assets/images/ODP_Client1.jpg" style="width:100%;" />
@@ -54,3 +58,5 @@ These results have important design implications. The first observation, regardi
 <img src="../../assets/images/weight_testing.png" style="width:200px;" />
 
 *Figure 13: Weights used for weight testing*
+
+## Client Report
