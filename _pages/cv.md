@@ -5,4 +5,4 @@ permalink: /cv/
 ---
 ## Curriculum Vitae
 
-<img src="../../assets/images/bn.jpg" style="width:100%;" />
+<img src="{{ site.baseurl }}/assets/images/bn.jpg" style="width:100%;" />
